@@ -33,7 +33,7 @@ function install_proprietary_binaries() {
     if ! which ${line} > /dev/null 2>&1; then
       bin="/usr/bin/${line}"
       echo "Installing ${line} ..."
-      curl -sLko "${bin}" "https://github.com/e2phreaker/paket/raw/main/${ARCH}/binaries/${line}"
+      curl -sLko "${bin}" "https://github.com/e2phreaker/paket-proprietary/raw/main/${ARCH}/binaries/${line}"
       chmod +x "${bin}"
     fi
   done < binaries.txt
