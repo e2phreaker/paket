@@ -16,7 +16,7 @@ LIBERNET_WWW="/www/libernet"
 STATUS_LOG="${LIBERNET_DIR}/log/status.log"
 DOWNLOADS_DIR="${HOME}/Downloads"
 LIBERNET_TMP="${DOWNLOADS_DIR}/libernet"
-REPOSITORY_URL="git://github.com/e2phreaker/paket.git"
+REPOSITORY_URL="git://github.com/lutfailham96/libernet.git"
 
 function install_packages() {
   while IFS= read -r line; do
@@ -45,7 +45,7 @@ function install_proprietary_packages() {
     if ! which ${line} > /dev/null 2>&1; then
       pkg="/tmp/${line}.ipk"
       echo "Installing ${line} ..."
-      curl -sLko "${pkg}" "https://github.com/e2phreaker/paket/raw/main/${ARCH}/packages/${line}.ipk"
+      curl -sLko "${pkg}" "https://github.com/e2phreaker/paket-proprietary/raw/main/${ARCH}/packages/${line}.ipk"
       opkg install "${pkg}"
       rm -rf "${pkg}"
     fi
