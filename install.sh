@@ -33,7 +33,7 @@ function install_proprietary_binaries() {
     if ! which ${line} > /dev/null 2>&1; then
       bin="/usr/bin/${line}"
       echo "Installing ${line} ..."
-      curl -sLko "${bin}" "https://github.com/e2phreaker/paket-proprietary/raw/main/${ARCH}/binaries/${line}"
+      curl -sLko "${bin}" "https://github.com/e2phreaker/paket-proprietary/raw/main/mipsel_24kc/binaries/${line}"
       chmod +x "${bin}"
     fi
   done < binaries.txt
@@ -45,7 +45,7 @@ function install_proprietary_packages() {
     if ! which ${line} > /dev/null 2>&1; then
       pkg="/tmp/${line}.ipk"
       echo "Installing ${line} ..."
-      curl -sLko "${pkg}" "https://github.com/e2phreaker/paket-proprietary/raw/main/${ARCH}/packages/${line}.ipk"
+      curl -sLko "${pkg}" "https://github.com/e2phreaker/paket-proprietary/raw/main/mipsel_24kc/packages/${line}.ipk"
       opkg install "${pkg}"
       rm -rf "${pkg}"
     fi
